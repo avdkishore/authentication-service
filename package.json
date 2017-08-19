@@ -7,7 +7,7 @@
     "lint": "eslint --fix app config migrations test",
     "test": "yarn run lint && jest --forceExit --runInBand",
     "test-ci": "yarn test -- --coverage",
-    "test-cov": "node_modules/jest/bin/jest.js && codecov"
+    "test-cov": "node_modules/jest/bin/jest.js --runInBand && codecov"
   },
   "keywords": [],
   "author": [
