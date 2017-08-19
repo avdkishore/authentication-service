@@ -11,23 +11,40 @@ jobs:
           POSTGRES_PASSWORD: postgres
     steps:
       - checkout
+      
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
+      
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+      
       - run:
           name: install-dependencies
           command: yarn
+      
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
+      
       - run:
           name: test
           command: yarn test-ci
+      
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
       - store_artifacts:
-          path: /app/test-results.xml
-          prefix: tests
+          path: /tmp/artifact-1
+          destination: artifact-file
+
+      - store_artifacts:
+          path: /tmp/artifacts
+
       - store_test_results:
           path: /app/test-results.xml
