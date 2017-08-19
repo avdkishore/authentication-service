@@ -1,6 +1,6 @@
 const database = {
   host: 'localhost',
-  port: 30000,
+  port: 5432,
   database: 'authenticationservice_test',
   username: 'postgres',
   password: 'postgres',
