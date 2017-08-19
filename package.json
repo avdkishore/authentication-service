@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint --fix app config migrations test",
     "test": "yarn run lint && jest --forceExit --runInBand",
-    "test-ci": "yarn test -- --coverage"
+    "test-ci": "yarn test -- --coverage",
+    "test-cov": "node_modules/jest/bin/jest.js && codecov"
   },
   "keywords": [],
   "author": [
@@ -37,6 +38,8 @@
     "supertest": "^3.0.0"
   },
   "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "testMatch": [
       "**/test/!(helpers)/**/*.test.js"
     ],
