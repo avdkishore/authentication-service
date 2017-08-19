@@ -1,7 +1,7 @@
 # authentication-service
 based on the [Koa.js](http://koajs.com/) framework
 
-## Build Status [![CircleCI](https://circleci.com/gh/avdkishore/auth-service/tree/master.svg?style=svg)](https://circleci.com/gh/avdkishore/auth-service/tree/master)
+## Build Status [![CircleCI](https://circleci.com/gh/avdkishore/auth-service/tree/test.svg?style=svg)](https://circleci.com/gh/avdkishore/auth-service/tree/test)
 
 ## Setup
 ```bash
