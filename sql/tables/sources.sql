@@ -1,0 +1,9 @@
+CREATE TABLE public.sources (
+  id SERIAL PRIMARY KEY,
+  name CHARACTER VARYING(255) NOT NULL,
+  "shortName" CHARACTER VARYING(255) NOT NULL,
+  "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL,
+  "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL
+);
+CREATE UNIQUE INDEX sources_name_key ON sources USING BTREE (name);
+CREATE UNIQUE INDEX "sources_shortName_key" ON sources USING BTREE ("shortName");

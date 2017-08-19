@@ -1,0 +1,50 @@
+{
+  "name": "auth-service",
+  "version": "0.1.0",
+  "description": "This service is used for storing sensitive user information",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint --fix app config migrations test",
+    "test": "yarn run lint && jest --forceExit --runInBand",
+    "test-ci": "yarn test -- --coverage"
+  },
+  "keywords": [],
+  "author": [
+    "Kishore <avdkishore@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "pg": "6.4.0",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4",
+    "sequelize": "4.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "istanbul": "^0.4.5",
+    "jest": "^20.0.4",
+    "prettier": "^1.5.3",
+    "sequelize-cli": "^2.7.0",
+    "supertest": "^3.0.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/!(helpers)/**/*.test.js"
+    ],
+    "coverageReporters": [
+      "text-summary",
+      "lcov"
+    ],
+    "bail": true,
+    "testEnvironment": "node"
+  }
+}
