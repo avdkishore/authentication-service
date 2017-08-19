@@ -27,7 +27,7 @@ jobs:
           name: test
           command: yarn test-ci
       - store_artifacts:
-          path: test-results.xml
+          path: /app/test-results.xml
           prefix: tests
       - store_test_results:
-          path: test-results.xml
+          path: /app/test-results.xml
