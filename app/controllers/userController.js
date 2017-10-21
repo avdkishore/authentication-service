@@ -2,6 +2,15 @@ const models = require('../models');
 const { comparePassword } = require('../utils');
 
 module.exports = {
+  me: async (ctx, next) => {
+    try {
+      ctx.body = await models.user.findOne({ username: ctx.options.username });
+      return next();
+    } catch (e) {
+      return ctx.throw(500, `${e} occured`);
+    }
+  },
+
   signup: async (ctx, next) => {
     const { username, password, email } = ctx.request.body;
 

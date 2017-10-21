@@ -11,5 +11,19 @@ module.exports = {
         hash,
         (err, isValid) => (err ? reject(err) : resolve(isValid))
       )
-    )
+    ),
+
+  getToken: ctx => {
+    let token;
+
+    if (typeof ctx.query.access_token === 'string') {
+      token = ctx.query.access_token;
+    }
+
+    if (typeof ctx.headers.authorization === 'string') {
+      token = ctx.headers.authorization.split(' ')[1];
+    }
+
+    return token;
+  }
 };
