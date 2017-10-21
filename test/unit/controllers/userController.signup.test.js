@@ -25,4 +25,15 @@ describe('User signup ', () => {
     expect(res.body).toHaveProperty('createdAt');
     expect(res.body).toHaveProperty('updatedAt');
   });
+
+  test('it should throw error if email is not provided', async () => {
+    const newUser = {
+      username: 'mary',
+      password: 'password'
+    };
+
+    const res = await request.post('/auth/v1/signup').send(newUser);
+
+    expect(res.status).toEqual(400);
+  });
 });

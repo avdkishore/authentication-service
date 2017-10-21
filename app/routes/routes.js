@@ -8,7 +8,7 @@ router.prefix(constants.ROUTE_PREFIX);
 /* signup route */
 router.post('/signup', UserController.signup);
 /* signin route */
-// router.post('/signin', userController.signin);
+router.post('/signin', UserController.signin);
 /* password reset route */
 // router.put('/reset', isAuthenticated, userController.updatePassword);
 /* user data */
